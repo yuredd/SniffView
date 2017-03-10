@@ -38,9 +38,8 @@ namespace SniffView
                     PacketDeviceOpenAttributes.Promiscuous,
                     1000))
             {
-                int packetnum = 0;
                 ListPackets.Items.Clear();
-                communicator.ReceiveSomePackets(out packetnum, 20, PacketHandler);
+                communicator.ReceiveSomePackets(out int packetnum, 20, PacketHandler);
             }
         }
 
@@ -48,7 +47,9 @@ namespace SniffView
         {
             if (packet.Ethernet.EtherType == PcapDotNet.Packets.Ethernet.EthernetType.IpV4)
             {
-                ListPackets.Items.Add(packet.Ethernet.IpV4.Source + " -> " + packet.Ethernet.IpV4.Destination);
+                ListPackets.Items.Add(packet.Ethernet.IpV4.Source + ":" + packet.Ethernet.IpV4.Tcp.SourcePort +
+                    " -> " + 
+                    packet.Ethernet.IpV4.Destination + ":" + packet.Ethernet.IpV4.Tcp.DestinationPort);
             }
             //ListPackets.Items.Add(packet.Timestamp.ToString("yyyy-MM-dd hh:mm:ss.fff") + " length:" + packet.Length);
         }

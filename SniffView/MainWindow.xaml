@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SniffView"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="SniffView" Height="350" Width="525">
+        Title="SniffView" Height="350" Width="525"
+        MinHeight="350" MinWidth="525">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
