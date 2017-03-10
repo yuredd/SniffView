@@ -8,11 +8,11 @@ using System.Windows;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("SniffView")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A realtime network grapher utility for Windows.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Elia Zanaboni")]
 [assembly: AssemblyProduct("SniffView")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright © Elia Zanaboni 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
