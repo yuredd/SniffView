@@ -1,0 +1,39 @@
+﻿<Window x:Class="SniffView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SniffView"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="SniffView" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="0" Grid.Row="0" Margin="10">
+            <TextBlock DockPanel.Dock="Top" Text="Interfaces"/>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="List Devices" Name="GetDevices" Click="GetDevices_Click"/>
+                <Decorator Width="20"/>
+                <Button Content="Start capture" Name="StartCapture" Click="StartCapture_Click"/>
+            </StackPanel>
+            <ListBox Name="ListDevices" DockPanel.Dock="Top">
+            </ListBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1" Grid.Row="0" Margin="10">
+            <TextBlock DockPanel.Dock="Top" Text="Capture"/>
+            <Button DockPanel.Dock="Bottom" Content="Clear capture" Name="ClearCapture" Click="ClearCapture_Click"/>
+            <ListBox Name="ListPackets" DockPanel.Dock="Top">
+            </ListBox>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Ready."/>
+        </DockPanel>
+    </Grid>
+</Window>
